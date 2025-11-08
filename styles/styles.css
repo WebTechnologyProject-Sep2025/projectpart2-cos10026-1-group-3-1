@@ -1,0 +1,718 @@
+/* ===Styles for Nexora Tech (styles.css) === */
+
+/* === Base & Global (from indexstyles.css) === */
+
+/* === RESET  === */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #222;
+  background-color: #fff;
+}
+
+/* === NAVBAR === */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 40px;
+  background-color: #070707;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo img {
+  height: 70px;
+  margin-left: -30px;
+
+}
+
+.nav-links {
+  display: flex;
+  gap: 130px;
+  align-items: center;
+  justify-content: space-around
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  transition: color 0.3s, transform 0.3s;
+  letter-spacing: 0.5px;
+}
+
+.nav-links a:hover {
+  color: #4da6ff;
+  transform: scale(1.1);
+}
+
+/* top để giữ navbar trên cùng, z-index để navbar luôn xuất hiện trên các phần khác */
+/* === SLOGAN === */
+#slogan {
+  display: block;
+  width: 100%;             
+  margin: 0;                
+  padding: 120px 100px;    
+  box-sizing: border-box;
+  border-radius: 0;        /* tránh lộ viền trắng giữa section */
+}
+.slogan h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  max-width: 600px;
+  line-height: 1.3;
+}
+
+/* === INTRO SECTION === */
+#IntroHeading {
+  background-color: #f7f8ff;
+  padding: 80px 100px;
+}
+
+.IntroHead h2 {
+  font-size: 2rem;
+  color: #20205a;
+  margin-bottom: 20px;
+}
+
+.IntroHead p {
+  max-width: 800px;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* === ABOUT SECTION === */
+#AboutHeading {
+  background-color: #fff;
+  padding: 80px 100px;
+}
+
+.ABHead h2 {
+  font-size: 2rem;
+  color: #20205a;
+  margin-bottom: 20px;
+}
+
+.ABHead p {
+  max-width: 800px;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* === FEATURED JOB SECTION === */
+#FeaturedJobHead {
+  background: linear-gradient(to right, #2a2e99, #3b3f8a); /* background màu gradient */
+  color: white;
+  padding: 80px 100px;
+}
+
+.FjHead p {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+.job-list {
+  list-style: none;
+  margin-bottom: 30px;
+}
+
+.job-list li {
+  font-size: 1.2rem;
+  margin: 8px 0;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 10px 15px;
+  border-radius: 10px;
+  width: fit-content; /* chỉ rộng vừa đủ nội dung */
+  transition: background 0.3s ease; /* thời gian animation */
+}
+
+.job-list a {
+  color: white;
+  text-decoration: none;
+}
+
+.job-list li:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+  font-weight: bold;
+}
+
+.apply-btn {
+  display: inline-block; /* để có thể đặt padding và margin */
+  background-color: #4da6ff;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.apply-btn:hover { /*animation khi hover */
+  background-color: #69b8ff;
+  transform: translateY(-2px);
+}
+
+/* === FOOTER === */
+footer {
+  background-color: #111;
+  color: #ccc;
+  text-align: center;
+  padding: 25px;
+  font-size: 0.95rem;
+}
+
+footer a {
+  color: #4da6ff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+
+/* === Additions from applystyles.css === */
+/* ================================================== SLOGAN (Hero Banner) ================================================== */ 
+#slogan{
+  background: linear-gradient(to right, #3b3f8a, #2a2e99);
+  color: #fff;
+  padding: 120px 100px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+#slogan h1{
+  font-size: 2.8rem;
+  font-weight: 700;
+  max-width: 600px;
+  line-height: 1.3;
+}
+
+section{
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 0px;
+  max-width: 100%;
+
+}
+
+.headings{
+  text-align: center;
+  color: #003580;
+  margin-bottom: 20px;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+label{
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+input[type="text"], input[type="email"], input[type="date"], select, textarea{
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+input, select, textarea{
+  border: 1px solid #003580;
+}
+
+fieldset{
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 10px 15px;
+}
+
+legend{
+  font-weight: bold;
+  color: #003580;
+}
+
+button{
+  background: #003580;
+  color: white;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.2s;
+}
+
+button:hover{
+  background: #0056b3;
+  transform: translateY(-2px);
+}
+
+button[type="reset"]{
+  background: #888;
+}
+
+button[type="reset"]:hover{
+  background: #666;
+}
+
+
+/* === Additions from aboutstyles.css === */
+/* ================================================== INTRO SECTION ================================================== */ 
+#IntroHeading{
+  background-color: #f7f8ff;
+  padding: 80px 100px;
+}
+
+/* ================================================== ABOUT SECTION (Team Members) ================================================== */ 
+#AboutHeading{
+  background-color: #eef3ff;
+  padding: 80px 100px;
+}
+
+/* --- Team Members List --- */ 
+.ABHead{
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  background: #f9fcff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.team{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #e0e8f5;
+  border-radius: 8px;
+}
+
+.team li{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #e0e8f5;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; /* thêm hiệu ứng */
+}
+
+.team li:last-child{
+  border-bottom: none;
+}
+
+.team li:hover{
+  background: #eef3ff;
+  transform: translateX(5px);
+  box-shadow: 2px 4px 8px rgba(0,0,0,0.1);
+}
+
+.team .name{
+  flex: 1;
+  font-weight: 600;
+  color: #20205a;
+  margin-right: 10px;
+}
+
+.team a{
+  color: #003580;
+  font-weight: 600;
+  text-decoration: none;
+  margin-right: 12px;
+}
+
+.team-heading{
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  color: #003580;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.team-heading::after{
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #003580, #4a90e2);
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
+
+/* ================================================== TEAM ROLES SECTION ================================================== */ 
+.team-roles-container{
+  display: flex;
+  justify-content: center;
+  background-color: #f4f8fb;
+  padding: 40px 0; 
+}
+
+.team-role{
+  background: #f9fcff;
+  border: 1px solid #e0e8f5;
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin-bottom: 14px;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.team-role:hover{
+  background: #eef3ff;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.team-roles dl{ margin: 0; }
+
+.team-roles dt{
+  font-weight: 700;
+  color: #003580;
+  margin: 0 0 6px;
+}
+
+.team-roles dd{
+  margin: 0;
+  color: #444;
+  line-height: 1.5;
+}
+
+.team-roles a{
+  color: #003580;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.team-roles a:hover{
+  text-decoration: underline;
+}
+
+/* ================================================== TABLES (General Style) ================================================== */ 
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 20px;
+}
+
+table, th, td {
+  border: 1px solid #003580;
+}
+
+th {
+  background: #003580;
+  color: white;
+  padding: 10px;
+  text-align: left;
+}
+
+td {
+  padding: 10px;
+}
+
+tr:nth-child(even) { /* Màu nền xen kẽ cho các hàng chẵn */
+  background: #f0f4fa;
+}
+
+tr:hover {
+  background: #dce6f7;
+}
+/* ================================================== TUTOR SECTION ================================================== */ 
+.tutor-container{
+  background: #f4f8fb;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.tutor{
+  font-size: 22px;
+  color: #003580;
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+.tutor a{
+  color: #003580;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.tutor a:hover{
+  text-decoration: underline;
+}
+
+/* ===== GROUP PHOTO LAYOUT ===== */ .group-photo-section{
+  background: #f7f9ff;
+  padding: 40px 100px;
+}
+
+.group-figure{
+  float: right;
+  margin: 0 0 16px 28px;     /* tạo khoảng cách với nội dung bên trái */
+  max-width: 40%;
+}
+
+.group-figure img{
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 2px solid #003580; 
+  border-radius: 8px;
+  background: #fff;
+}
+
+.group-figure figcaption{
+  text-align: center;
+  font-size: 0.9rem;
+  color: #444;
+  margin-top: 6px;
+}
+
+/* Khối nội dung bên trái ảnh */ .group-summary{
+  max-width: 60ch;               
+  padding: 16px 20px;
+  background: #ffffff;
+  border-left: 4px solid #003580;  
+  box-shadow: 0 4px 14px rgba(0,0,0,.06);
+  border-radius: 10px;
+}
+
+.group-summary h3{
+  margin: 0 0 8px;
+  color: #0b2c6e;
+}
+
+.group-summary p{
+  margin: 0 0 10px;
+  color: #333;
+}
+
+.group-bullets{
+  margin: 0 0 12px 18px;
+  padding: 0;
+}
+
+.group-bullets li{
+  margin: 6px 0;
+}
+
+/* Nút nhỏ contact us */
+.group-cta .button-contact{
+  display: inline-block;
+  padding: 10px 16px;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 1000px;
+  border: 1px solid #003580;
+  background: #003580;
+  color: #fff;
+  transition: transform .15s ease, opacity .2s ease;
+}
+
+.group-cta .button-contact:hover{
+  transform: translateY(-1px);
+  opacity: .95;
+}
+
+/* màn hình nhỏ thì ảnh với chữ tự canh xuống dưới */
+@media (max-width: 768px){
+  .group-figure {
+    float: none;
+    max-width: 100%;
+    margin: 16px 0 0 0;
+  }
+
+.group-photo-section{
+    padding: 28px 20px;
+  }
+
+.group-summary{
+    max-width: 100%;
+  }
+
+.nav-links {
+  display: grid;
+  gap: 1rem;
+  width: 80%;
+}
+.team{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #e0e8f5;
+  border-radius: 8px;
+  width: 100%;
+}
+.team li{
+  display: inline-block;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #e0e8f5;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}}
+/* === Additions from jobsstyles.css === */
+/* --- Jobs Section --- */ 
+.jobs{
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+/* --- Job Card --- */ 
+.job-card{
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  scroll-margin-top: 120px;
+}
+
+.job-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.job-title{
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #20205a;
+  margin-bottom: 10px;
+}
+
+.job-desc{
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+.perks{
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.view-details{
+  position: absolute;
+  bottom: 20px;
+  left: 25px;
+  background-color: #3b3f8a;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.view-details:hover{
+  background-color: #0c56b3;
+}
+
+/* =============================== Tabbed Job Layout (Animated) =============================== */ /* Active label (checked tab) */ 
+.tab-container{
+  width: 90%;
+  margin: auto;
+}
+
+.tab-buttons{
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.tab-btn{
+  background: #20205a;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.tab-btn:hover{
+  background: #35358a;
+  transform: translateY(-2px);
+}
+
+/* Hide all contents by default */ 
+.tab-content{
+  display: none;
+  animation: fadeIn 0.4s ease;
+}
+
+/* Show content when targeted */ 
+.tab-content:target{
+  display: block;
+}
+
+/* Default visible section if none is targeted */ 
+.tab-content:first-of-type{
+  display: block;
+}
+
+/* Fade animation */ 
+@keyframes fadeIn{
+  from { opacity: 0; transform: translateY(10px); }
+
+to{ opacity: 1; transform: translateY(0); }
+
+} /* Highlight active tab */ 
+.tab-btn[href="#web"]:target, .tab-btn[href="#uiux"]:target, .tab-btn[href="#db"]:target{
+  background: #35358a;
+}
+
+.jobs-image{
+  display: block;
+  margin: 0 auto 30px auto;
+  max-width: 90%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  filter: brightness(0.95) saturate(1.05);
+  border: 3px solid #1b7544;
+}
+
+.bold-numbers li::marker{
+  font-weight: bold;
+}
+
+/* --- Notes ---
+   .jobs → contains all job cards
+   .job-card → each job listing block
+   .view-details → bottom-left button
+*/
+
