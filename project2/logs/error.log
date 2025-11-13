@@ -1,0 +1,12 @@
+[13-Nov-2025 14:33:03 Europe/Berlin] DB connection failed: Access denied for user 'rosot'@'localhost' (using password: NO)
+[13-Nov-2025 14:33:04 Europe/Berlin] DB connection failed: Access denied for user 'rosot'@'localhost' (using password: NO)
+[13-Nov-2025 14:33:04 Europe/Berlin] DB connection failed: Access denied for user 'rosot'@'localhost' (using password: NO)
+[13-Nov-2025 14:33:04 Europe/Berlin] DB connection failed: Access denied for user 'rosot'@'localhost' (using password: NO)
+[13-Nov-2025 14:33:04 Europe/Berlin] DB connection failed: Access denied for user 'rosot'@'localhost' (using password: NO)
+[13-Nov-2025 14:33:05 Europe/Berlin] DB connection failed: Access denied for user 'rosot'@'localhost' (using password: NO)
+[13-Nov-2025 14:33:05 Europe/Berlin] DB connection failed: Access denied for user 'rosot'@'localhost' (using password: NO)
+[13-Nov-2025 14:33:17 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli object is already closed in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php:95
+Stack trace:
+#0 D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php(95): mysqli->close()
+#1 {main}
+  thrown in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php on line 95
