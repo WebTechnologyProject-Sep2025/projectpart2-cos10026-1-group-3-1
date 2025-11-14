@@ -1,7 +1,4 @@
 <?php
-// process_eoi.php
-// Handles: server-side validation, sanitizing, auto table creation, insert, confirmation output
-
 // ------------------------
 // 1) Block direct access (user must come from form POST)
 // ------------------------
@@ -17,7 +14,7 @@ require_once "settings.php";
 // ------------------------
 $conn = @mysqli_connect($host, $user, $pwd, $sql_db);
 if (!$conn) {
-    die("<h2>❌ Database connection failed.</h2>");
+    die("<h2> Database connection failed.</h2>");
 }
 
 // ------------------------
@@ -178,7 +175,7 @@ mysqli_stmt_execute($stmt);
 // 9) Show Confirmation Page
 // ------------------------
 $new_id = mysqli_insert_id($conn);
-echo "<h2>✅ EOI Submitted Successfully</h2>";
+echo "<h2> EOI Submitted Successfully</h2>";
 echo "<p>Your EOInumber is: <strong>$new_id</strong></p>";
 echo "<p>Status: New</p>";
 echo "<p><a href=\"index.php\">Return Home</a></p>";
