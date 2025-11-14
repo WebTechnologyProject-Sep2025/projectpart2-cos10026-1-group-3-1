@@ -26,74 +26,67 @@ $conn->close();
 
 <body>
   <?php include "header.inc"; ?>
-  <!-- Hero Section -->
+<main>
   <section id="slogan">
     <div class="slogan">
       <h1>Your future in technology starts here.</h1>
     </div>
   </section>
-  <!-- Jobs Section -->
-  <section class="jobs">
-    <h2 style="text-align:center; margin-bottom:30px; color:#20205a;">
-      Explore Our Career Roles<br><br>
-      <img src="../images/man.jpg" alt="A Little bit of The Creator" class="jobs-image">
-    </h2>
 
-    <div class="tab-container">
-      <!-- Buttons -->
-      <div class="tab-buttons">
-        <?php
-        if (!empty($jobs)) {
-          foreach ($jobs as $row) {
-            echo '<a href="#' . htmlspecialchars($row['title']) . '"class="tab-btn">' . htmlspecialchars($row["title"]) . '</a>';
-          }
-        } else {
-          echo "<p>No jobs available right now.</p>";
-        }
-        ?>
+  <section class="jobs-layout">
+
+    <h2 class="jobs-header">Explore Our Career Roles</h2>
+
+    <div class="jobs-wrapper">
+
+      <!-- LEFT: Job List -->
+      <aside class="job-list-left">
+        <ul>
+          <?php foreach ($jobs as $row): ?>
+            <li>
+              <a href="#job-<?php echo $row['jobs_id']; ?>">
+                <?php echo htmlspecialchars($row["title"]); ?>
+              </a>
+            </li>
+          <?php endforeach; ?>
+        </ul>
+      </aside>
+
+      <!-- RIGHT: Job Details -->
+      <div class="job-details-right">
+        <?php foreach ($jobs as $row): ?>
+          <div id="job-<?php echo $row['jobs_id']; ?>" class="job-detail-card">
+
+            <!-- Title's Portion -->
+            <h3><?php echo htmlspecialchars($row['title']); ?></h3>
+            <p class="job-desc"><?php echo (htmlspecialchars($row['description'])); ?></p>
+
+            <!-- Responsibilities' Portion-->
+            <h4>Responsibilities</h4>
+            <ol>
+              <?php foreach (explode("\n", trim($row['responsibilities'])) as $resp): ?>
+                <li><?php echo htmlspecialchars($resp); ?></li>
+              <?php endforeach; ?>
+            </ol>
+
+            <!-- Benefits' Portion -->
+            <h4>Benefits</h4>
+            <ul>
+              <?php foreach (explode("\n", trim($row['benefits'])) as $benefit): ?>
+                <li><?php echo htmlspecialchars($benefit); ?></li>
+              <?php endforeach; ?>
+            </ul>
+
+            <a href="apply.php" class="apply-btn-job">Apply Now</a>
+          </div>
+        <?php endforeach; ?>
       </div>
 
-      <!-- Web Developer -->
-      <?php
-      if (!empty($jobs)) {
-        foreach ($jobs as $row) {
-          echo '<div id="' . htmlspecialchars($row['title']) . '" class="tab-content">';
-          echo '<div class="job-card">';
-          echo '<h3 class="job-title">' . htmlspecialchars($row['jobs_id']) . ' ' . htmlspecialchars($row['title']) . '</h3>';
-          echo '<p class="job-desc">' . htmlspecialchars($row['description']) . '</p>';
-
-          /* Respronsibilities' Portion */
-          echo '<h4>Responsibilities:</h4>';
-          echo '<ol class="perks bold-numbers">';
-          $responsibilities = explode("\n", trim($row['responsibilities']));
-          foreach ($responsibilities as $responsibility) {
-            echo '<li>' . htmlspecialchars(trim($responsibility)) . '</li>';
-          }
-          echo '</ol>';
-
-          /* Benefits' Portion */
-          echo '<h4>Benefits:</h4>';
-          echo '<ul class="perks">';
-          $benefits = explode("\n", trim($row['benefits']));
-          foreach ($benefits as $benefit) {
-            echo '<li>' . htmlspecialchars(trim($benefit)) . '</li>';
-          }
-          echo '</ul>';
-          echo '<a href="apply.php" class="view-details">Apply Now</a>';
-          echo '</div>';
-          echo '</div>';
-        }
-      } else {
-        echo "<p>No jobs available right now.</p>";
-      }
-      ?>
     </div>
-  </section>
-  <?php include "footer.inc"; ?>
 
-  <?php
-  $conn->close()
-  ?>
+  </section>
+</main>
+  <?php include "footer.inc"; ?>
 </body>
 
 </html>

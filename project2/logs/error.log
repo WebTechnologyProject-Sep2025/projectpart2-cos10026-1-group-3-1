@@ -10,3 +10,103 @@ Stack trace:
 #0 D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php(95): mysqli->close()
 #1 {main}
   thrown in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php on line 95
+[14-Nov-2025 11:24:48 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli object is already closed in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php:95
+Stack trace:
+#0 D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php(95): mysqli->close()
+#1 {main}
+  thrown in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php on line 95
+[14-Nov-2025 11:30:56 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'jobs.job_list' doesn't exist in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php:6
+Stack trace:
+#0 D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php(6): mysqli->query('SELECT * FROM j...')
+#1 {main}
+  thrown in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php on line 6
+[14-Nov-2025 11:30:57 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'jobs.job_list' doesn't exist in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php:6
+Stack trace:
+#0 D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php(6): mysqli->query('SELECT * FROM j...')
+#1 {main}
+  thrown in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php on line 6
+[14-Nov-2025 11:30:58 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'jobs.job_list' doesn't exist in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php:6
+Stack trace:
+#0 D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php(6): mysqli->query('SELECT * FROM j...')
+#1 {main}
+  thrown in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php on line 6
+[14-Nov-2025 11:30:58 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'jobs.job_list' doesn't exist in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php:6
+Stack trace:
+#0 D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php(6): mysqli->query('SELECT * FROM j...')
+#1 {main}
+  thrown in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php on line 6
+[14-Nov-2025 11:30:58 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'jobs.job_list' doesn't exist in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php:6
+Stack trace:
+#0 D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php(6): mysqli->query('SELECT * FROM j...')
+#1 {main}
+  thrown in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php on line 6
+[14-Nov-2025 11:30:58 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'jobs.job_list' doesn't exist in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php:6
+Stack trace:
+#0 D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php(6): mysqli->query('SELECT * FROM j...')
+#1 {main}
+  thrown in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php on line 6
+[14-Nov-2025 11:31:05 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'jobs.job_list' doesn't exist in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php:6
+Stack trace:
+#0 D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php(6): mysqli->query('SELECT * FROM j...')
+#1 {main}
+  thrown in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php on line 6
+[14-Nov-2025 11:32:20 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'jobs.job_list' doesn't exist in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php:6
+Stack trace:
+#0 D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php(6): mysqli->query('SELECT * FROM j...')
+#1 {main}
+  thrown in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php on line 6
+[14-Nov-2025 11:32:20 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'jobs.job_list' doesn't exist in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php:6
+Stack trace:
+#0 D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php(6): mysqli->query('SELECT * FROM j...')
+#1 {main}
+  thrown in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php on line 6
+[14-Nov-2025 11:32:20 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'jobs.job_list' doesn't exist in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php:6
+Stack trace:
+#0 D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php(6): mysqli->query('SELECT * FROM j...')
+#1 {main}
+  thrown in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php on line 6
+[14-Nov-2025 11:32:43 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'jobs.job_des' doesn't exist in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php:6
+Stack trace:
+#0 D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php(6): mysqli->query('SELECT * FROM j...')
+#1 {main}
+  thrown in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php on line 6
+[14-Nov-2025 11:32:44 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'jobs.job_des' doesn't exist in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php:6
+Stack trace:
+#0 D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php(6): mysqli->query('SELECT * FROM j...')
+#1 {main}
+  thrown in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php on line 6
+[14-Nov-2025 11:33:22 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'jobs.job_des' doesn't exist in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php:6
+Stack trace:
+#0 D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php(6): mysqli->query('SELECT * FROM j...')
+#1 {main}
+  thrown in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php on line 6
+[14-Nov-2025 11:33:23 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'jobs.job_des' doesn't exist in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php:6
+Stack trace:
+#0 D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php(6): mysqli->query('SELECT * FROM j...')
+#1 {main}
+  thrown in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php on line 6
+[14-Nov-2025 11:33:23 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'jobs.job_des' doesn't exist in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php:6
+Stack trace:
+#0 D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php(6): mysqli->query('SELECT * FROM j...')
+#1 {main}
+  thrown in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php on line 6
+[14-Nov-2025 11:33:23 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'jobs.job_des' doesn't exist in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php:6
+Stack trace:
+#0 D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php(6): mysqli->query('SELECT * FROM j...')
+#1 {main}
+  thrown in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php on line 6
+[14-Nov-2025 11:34:03 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli object is already closed in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php:95
+Stack trace:
+#0 D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php(95): mysqli->close()
+#1 {main}
+  thrown in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php on line 95
+[14-Nov-2025 11:35:45 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli object is already closed in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php:95
+Stack trace:
+#0 D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php(95): mysqli->close()
+#1 {main}
+  thrown in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php on line 95
+[14-Nov-2025 12:05:44 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli object is already closed in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php:95
+Stack trace:
+#0 D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php(95): mysqli->close()
+#1 {main}
+  thrown in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php on line 95

@@ -13,8 +13,8 @@ body {
   line-height: 1.6;
   color: #222;
   background-color: #fff;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
   min-height: 100vh;
 }
 
@@ -33,6 +33,14 @@ main {
   position: sticky;
   top: 0;
   z-index: 100;
+/*   max-height: 84px; */
+}
+@media (max-width: 900px) {
+  .navbar {
+    position: relative;
+    align-items: no;
+    overflow: ;
+  }
 }
 
 .logo img {
@@ -42,7 +50,7 @@ main {
 
 .nav-links {
   display: flex;
-  gap: 130px;
+  gap: 10vmin;
   align-items: center;
   justify-content: space-around
 }
@@ -70,8 +78,10 @@ main {
   margin: 0;
   padding: 120px 100px;
   box-sizing: border-box;
-  border-radius: 0; /* avoid showing white border between sections */
+  border-radius: 0;
+  /* avoid showing white border between sections */
 }
+
 .slogan h1 {
   font-size: 2.8rem;
   font-weight: 700;
@@ -87,7 +97,8 @@ main {
 
 /* === FEATURED JOB SECTION === */
 #FeaturedJobHead {
-  background: linear-gradient(to right, #2a2e99, #3b3f8a); /* gradient background */
+  background: linear-gradient(to right, #2a2e99, #3b3f8a);
+  /* gradient background */
   color: white;
   padding: 80px 100px;
 }
@@ -108,8 +119,10 @@ main {
   background: rgba(255, 255, 255, 0.15);
   padding: 10px 15px;
   border-radius: 10px;
-  width: fit-content; /* width fits content only */
-  transition: background 0.3s ease; /* animation duration */
+  width: fit-content;
+  /* width fits content only */
+  transition: background 0.3s ease;
+  /* animation duration */
 }
 
 .job-list a {
@@ -124,7 +137,8 @@ main {
 }
 
 .apply-btn {
-  display: inline-block; /* to allow padding and margin */
+  display: inline-block;
+  /* to allow padding and margin */
   background-color: #4da6ff;
   color: #fff;
   font-weight: 600;
@@ -134,7 +148,8 @@ main {
   transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.apply-btn:hover { /* hover animation */
+.apply-btn:hover {
+  /* hover animation */
   background-color: #69b8ff;
   transform: translateY(-2px);
 }
@@ -159,8 +174,8 @@ footer a:hover {
 
 
 /* === Additions from applystyles.css === */
-/* ================================================== SLOGAN (Hero Banner) ================================================== */ 
-#slogan{
+/* ================================================== SLOGAN (Hero Banner) ================================================== */
+#slogan {
   background: linear-gradient(to right, #3b3f8a, #2a2e99);
   color: #fff;
   padding: 120px 100px;
@@ -173,14 +188,14 @@ footer a:hover {
   box-shadow: none;
 }
 
-#slogan h1{
+#slogan h1 {
   font-size: 2.8rem;
   font-weight: 700;
   max-width: 600px;
   line-height: 1.3;
 }
 
-section{
+section {
   background: white;
   border-radius: 8px;
   padding: 20px;
@@ -189,13 +204,13 @@ section{
 
 }
 
-.headings{
+.headings {
   text-align: center;
   color: #003580;
   margin-bottom: 20px;
 }
 
-form{
+form {
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -203,13 +218,17 @@ form{
   margin: 0 auto;
 }
 
-label{
+label {
   font-weight: bold;
   margin-bottom: 5px;
   display: block;
 }
 
-input[type="text"], input[type="email"], input[type="date"], select, textarea{
+input[type="text"],
+input[type="email"],
+input[type="date"],
+select,
+textarea {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
@@ -217,22 +236,24 @@ input[type="text"], input[type="email"], input[type="date"], select, textarea{
   font-size: 1rem;
 }
 
-input, select, textarea{
+input,
+select,
+textarea {
   border: 1px solid #003580;
 }
 
-fieldset{
+fieldset {
   border: 1px solid #ccc;
   border-radius: 6px;
   padding: 10px 15px;
 }
 
-legend{
+legend {
   font-weight: bold;
   color: #003580;
 }
 
-button{
+button {
   background: #003580;
   color: white;
   padding: 12px 18px;
@@ -243,43 +264,43 @@ button{
   transition: background 0.3s, transform 0.2s;
 }
 
-button:hover{
+button:hover {
   background: #0056b3;
   transform: translateY(-2px);
 }
 
-button[type="reset"]{
+button[type="reset"] {
   background: #888;
 }
 
-button[type="reset"]:hover{
+button[type="reset"]:hover {
   background: #666;
 }
 
 
 /* === Additions from aboutstyles.css === */
-/* ================================================== INTRO SECTION ================================================== */ 
-#IntroHeading{
+/* ================================================== INTRO SECTION ================================================== */
+#IntroHeading {
   background-color: #f7f8ff;
   padding: 80px 100px;
 }
 
-/* ================================================== ABOUT SECTION (Team Members) ================================================== */ 
-#AboutHeading{
+/* ================================================== ABOUT SECTION (Team Members) ================================================== */
+#AboutHeading {
   background-color: #eef3ff;
   padding: 80px 100px;
 }
 
-.ABHead{
+.ABHead {
   max-width: 950px;
   margin: 0 auto;
   padding: 30px 20px;
   background: #f9fcff;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-.team{
+.team {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -287,40 +308,41 @@ button[type="reset"]:hover{
   border-radius: 8px;
 }
 
-.team li{
+.team li {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 12px 16px;
   border-bottom: 1px solid #e0e8f5;
-  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; /* add effects */
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  /* add effects */
 }
 
-.team li:last-child{
+.team li:last-child {
   border-bottom: none;
 }
 
-.team li:hover{
+.team li:hover {
   background: #eef3ff;
   transform: translateX(5px);
-  box-shadow: 2px 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.team .name{
+.team .name {
   flex: 1;
   font-weight: 600;
   color: #20205a;
   margin-right: 10px;
 }
 
-.team a{
+.team a {
   color: #003580;
   font-weight: 600;
   text-decoration: none;
   margin-right: 12px;
 }
 
-.team-heading{
+.team-heading {
   text-align: center;
   font-size: 28px;
   font-weight: 700;
@@ -329,7 +351,7 @@ button[type="reset"]:hover{
   position: relative;
 }
 
-.team-heading::after{
+.team-heading::after {
   content: "";
   display: block;
   width: 80px;
@@ -339,15 +361,15 @@ button[type="reset"]:hover{
   border-radius: 2px;
 }
 
-/* ================================================== TEAM ROLES SECTION ================================================== */ 
-.team-roles-container{
+/* ================================================== TEAM ROLES SECTION ================================================== */
+.team-roles-container {
   display: flex;
   justify-content: center;
   background-color: #f4f8fb;
-  padding: 40px 0; 
+  padding: 40px 0;
 }
 
-.team-role{
+.team-role {
   background: #f9fcff;
   border: 1px solid #e0e8f5;
   border-radius: 12px;
@@ -356,44 +378,48 @@ button[type="reset"]:hover{
   transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.team-role:hover{
+.team-role:hover {
   background: #eef3ff;
   transform: translateY(-1px);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
-.team-roles dl{ margin: 0; }
+.team-roles dl {
+  margin: 0;
+}
 
-.team-roles dt{
+.team-roles dt {
   font-weight: 700;
   color: #003580;
   margin: 0 0 6px;
 }
 
-.team-roles dd{
+.team-roles dd {
   margin: 0;
   color: #444;
   line-height: 1.5;
 }
 
-.team-roles a{
+.team-roles a {
   color: #003580;
   font-weight: 700;
   text-decoration: none;
 }
 
-.team-roles a:hover{
+.team-roles a:hover {
   text-decoration: underline;
 }
 
-/* ================================================== TABLES (General Style) ================================================== */ 
+/* ================================================== TABLES (General Style) ================================================== */
 table {
   border-collapse: collapse;
   width: 100%;
   margin: 20px;
 }
 
-table, th, td {
+table,
+th,
+td {
   border: 1px solid #003580;
 }
 
@@ -408,96 +434,99 @@ td {
   padding: 10px;
 }
 
-tr:nth-child(even) { /* alternating row background for even rows */
+tr:nth-child(even) {
+  /* alternating row background for even rows */
   background: #f0f4fa;
 }
 
 tr:hover {
   background: #dce6f7;
 }
-/* ================================================== TUTOR SECTION ================================================== */ 
-.tutor-container{
+
+/* ================================================== TUTOR SECTION ================================================== */
+.tutor-container {
   background: #f4f8fb;
   padding: 40px 0;
   text-align: center;
 }
 
-.tutor{
+.tutor {
   font-size: 22px;
   color: #003580;
   margin-top: 10px;
   line-height: 1.6;
 }
 
-.tutor a{
+.tutor a {
   color: #003580;
   font-weight: 600;
   text-decoration: none;
 }
 
-.tutor a:hover{
+.tutor a:hover {
   text-decoration: underline;
 }
 
-/* ===== GROUP PHOTO LAYOUT ===== */ 
-.group-photo-section{
+/* ===== GROUP PHOTO LAYOUT ===== */
+.group-photo-section {
   background: #f7f9ff;
   padding: 40px 100px;
 }
 
-.group-figure{
+.group-figure {
   float: right;
-  margin: 0 0 16px 28px;     /* create spacing from left content */
+  margin: 0 0 16px 28px;
+  /* create spacing from left content */
   max-width: 40%;
 }
 
-.group-figure img{
+.group-figure img {
   display: block;
   width: 100%;
   height: auto;
-  border: 2px solid #003580; 
+  border: 2px solid #003580;
   border-radius: 8px;
   background: #fff;
 }
 
-.group-figure figcaption{
+.group-figure figcaption {
   text-align: center;
   font-size: 0.9rem;
   color: #444;
   margin-top: 6px;
 }
 
-/* Left content block beside the image */ 
-.group-summary{
-  max-width: 60ch;               
+/* Left content block beside the image */
+.group-summary {
+  max-width: 60ch;
   padding: 16px 20px;
   background: #ffffff;
-  border-left: 4px solid #003580;  
-  box-shadow: 0 4px 14px rgba(0,0,0,.06);
+  border-left: 4px solid #003580;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .06);
   border-radius: 10px;
 }
 
-.group-summary h3{
+.group-summary h3 {
   margin: 0 0 8px;
   color: #0b2c6e;
 }
 
-.group-summary p{
+.group-summary p {
   margin: 0 0 10px;
   color: #333;
 }
 
-.group-bullets{
+.group-bullets {
   margin: 0 0 12px 18px;
   padding: 0;
 }
 
-.group-bullets li{
+.group-bullets li {
   margin: 6px 0;
 }
 
 /* small contact us button */
-.group-cta .button-contact{
+.group-cta .button-contact {
   display: inline-block;
   padding: 10px 16px;
   text-decoration: none;
@@ -509,33 +538,36 @@ tr:hover {
   transition: transform .15s ease, opacity .2s ease;
 }
 
-.group-cta .button-contact:hover{
+.group-cta .button-contact:hover {
   transform: translateY(-1px);
   opacity: .95;
 }
 
 /* For small screens, image stacks under content */
-@media (max-width: 768px){
+@media (max-width: 768px) {
   .group-figure {
     float: none;
     max-width: 100%;
     margin: 16px 0 0 0;
   }
 
-  .group-photo-section{
+  .group-photo-section {
     padding: 28px 20px;
   }
 
-  .group-summary{
+  .group-summary {
     max-width: 100%;
   }
 
+/*   
+  Minh Béo duck with the navbar with this code
   .nav-links {
     display: grid;
     gap: 1rem;
     width: 80%;
-  }
-  .team{
+  } */
+
+  .team {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -543,7 +575,8 @@ tr:hover {
     border-radius: 8px;
     width: 100%;
   }
-  .team li{
+
+  .team li {
     display: inline-block;
     justify-content: space-between;
     align-items: center;
@@ -554,145 +587,121 @@ tr:hover {
 }
 
 /* === Additions from jobsstyles.css === */
-/* --- Jobs Section --- */ 
-.jobs{
-  padding: 60px 20px;
-  max-width: 1100px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+/* ===================== NEW JOBS LAYOUT (LEFT-LIST + RIGHT DETAILS) ===================== */
+
+.jobs-layout {
+  margin: 50px auto;
+  padding: 20px;
 }
 
-/* --- Job Card --- */ 
-.job-card{
-  background-color: #fff;
-  border-radius: 12px;
-  padding: 25px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  scroll-margin-top: 120px;
-}
-
-.job-card:hover{
-  transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-.job-title{
-  font-size: 1.25rem;
-  font-weight: bold;
+.jobs-header {
+  text-align: center;
   color: #20205a;
-  margin-bottom: 10px;
-}
-
-.job-desc{
-  font-size: 0.95rem;
-  margin-bottom: 20px;
-}
-
-.perks{
-  font-size: 0.9rem;
-  color: #333;
   margin-bottom: 40px;
 }
 
-.view-details{
-  position: absolute;
-  bottom: 20px;
-  left: 25px;
-  background-color: #3b3f8a;
-  color: white;
-  padding: 8px 14px;
-  border-radius: 5px;
+.jobs-wrapper {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 30px;
+}
+
+/* Left column */
+.job-list-left {
+  background: #f7f7ff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  height: fit-content;
+  position: sticky;
+  top: 120px;
+}
+
+.job-list-left ul {
+  list-style: none;
+}
+
+.job-list-left li {
+  margin-bottom: 12px;
+}
+
+.job-list-left a {
+  display: block;
+  background: #ffffff;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  color: #20205a;
   text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 500;
+  border: 1px solid #ddd;
+  transition: all 0.2s ease;
+}
+
+.job-list-left a:hover {
+  background: #3b3f8a;
+  color: white;
+  transform: translateX(4px);
+}
+
+/* Mobile or Zoom In View */
+@media (max-width: 900px) {
+  .jobs-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .job-list-left {
+    position: static;
+  }
+}
+/* Right column: job details */
+.job-details-right {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.job-detail-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  scroll-margin-top: 120px;
+  display: none;
+}
+
+.job-detail-card h3 {
+  font-size: 1.6rem;
+  color: #20205a;
+  margin-bottom: 15px;
+}
+
+.job-detail-card h4 {
+  margin-top: 20px;
+  margin-bottom: 8px;
+  color: #003580;
+}
+
+.job-detail-card:target {
+  display: block;
+}
+
+/* .job-detail-card:first-of-type {
+    display: block;
+} */
+
+.apply-btn-job {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 10px 18px;
+  background: #20205a;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
   transition: background 0.2s ease;
 }
 
-.view-details:hover{
-  background-color: #0c56b3;
-}
-
-/* =============================== Tabbed Job Layout (Animated) =============================== */ 
-.tab-container{
-  width: 90%;
-  margin: auto;
-}
-
-.tab-buttons{
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-bottom: 25px;
-  flex-wrap: wrap;
-}
-
-.tab-btn{
-  background: #20205a;
-  color: white;
-  padding: 12px 25px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: background 0.25s ease, transform 0.2s ease;
-}
-
-.tab-btn:hover{
-  background: #35358a;
-  transform: translateY(-2px);
-}
-
-/* Hide all contents by default */ 
-.tab-content{
-  display: none;
-  animation: fadeIn 0.4s ease;
-}
-
-/* Show content when targeted */ 
-.tab-content:target{
-  display: block;
-}
-
-/* Default visible section if none is targeted */ 
-.tab-content:first-of-type{
-  display: block;
-}
-
-/* Fade animation */ 
-@keyframes fadeIn{
-  from { opacity: 0; transform: translateY(10px); }
-  to{ opacity: 1; transform: translateY(0); }
-}
-
-/* Highlight active tab */ 
-.tab-btn[href="#web"]:target, .tab-btn[href="#uiux"]:target, .tab-btn[href="#db"]:target{
+.apply-btn-job:hover {
   background: #35358a;
 }
-
-.jobs-image{
-  display: block;
-  margin: 0 auto 30px auto;
-  max-width: 90%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  filter: brightness(0.95) saturate(1.05);
-  border: 3px solid #1b7544;
-}
-
-.bold-numbers li::marker{
-  font-weight: bold;
-}
-
-/* --- Notes ---
-   .jobs → contains all job cards
-   .job-card → each job listing block
-   .view-details → bottom-left button
-*/
 
