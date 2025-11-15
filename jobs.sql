@@ -34,7 +34,7 @@ CREATE TABLE `jobs_des` (
   `description` text NOT NULL,
   `responsibilities` text NOT NULL,
   `benefits` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `jobs_des`
