@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nexora Tech</title>
   <link rel="stylesheet" href="../styles/styles.css">
+  <link rel="icon" type="image/png" href="../favicon/favicon.png">
 </head>
 
 
@@ -104,6 +105,7 @@
         <textarea name="other_skills" id="otherSkills" rows="4" cols="40"
           placeholder="Describe other skills if you checked ‘Other’."></textarea><br>
         <button type="reset">Reset </button>
+        <label><input type="checkbox" name="Agree[]" value="Agree" required> I agree with the informations</label>
         <button type="submit">Submit</button>
       </form>
     </section>
