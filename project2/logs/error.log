@@ -110,3 +110,6 @@ Stack trace:
 #0 D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php(95): mysqli->close()
 #1 {main}
   thrown in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\jobs.php on line 95
+[15-Nov-2025 07:51:36 Europe/Berlin] DB connection failed: Unknown database 'jobs'
+[15-Nov-2025 07:51:38 Europe/Berlin] DB connection failed: Unknown database 'jobs'
+[15-Nov-2025 07:51:38 Europe/Berlin] DB connection failed: Unknown database 'jobs'

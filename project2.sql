@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 15, 2025 lúc 07:10 AM
--- Phiên bản máy phục vụ: 8.0.44
--- Phiên bản PHP: 8.2.12
+-- Host: 127.0.0.1
+-- Generation Time: Nov 15, 2025 at 07:54 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,26 +18,51 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `jobs`
+-- Database: `project2`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `jobs_des`
+-- Table structure for table `eoi`
+--
+
+CREATE TABLE `eoi` (
+  `EOInumber` int(11) NOT NULL,
+  `job_ref` varchar(5) NOT NULL,
+  `first_name` varchar(20) NOT NULL,
+  `last_name` varchar(20) NOT NULL,
+  `street` varchar(40) NOT NULL,
+  `suburb` varchar(40) NOT NULL,
+  `state` varchar(3) NOT NULL,
+  `postcode` char(4) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `phone` varchar(12) NOT NULL,
+  `skill1` varchar(20) DEFAULT NULL,
+  `skill2` varchar(20) DEFAULT NULL,
+  `skill3` varchar(20) DEFAULT NULL,
+  `skill4` varchar(20) DEFAULT NULL,
+  `other_skills` text DEFAULT NULL,
+  `status` varchar(10) DEFAULT 'New'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `jobs_des`
 --
 
 CREATE TABLE `jobs_des` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `jobs_id` varchar(10) NOT NULL,
   `title` varchar(100) NOT NULL,
   `description` text NOT NULL,
   `responsibilities` text NOT NULL,
   `benefits` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `jobs_des`
+-- Dumping data for table `jobs_des`
 --
 
 INSERT INTO `jobs_des` (`id`, `jobs_id`, `title`, `description`, `responsibilities`, `benefits`) VALUES
@@ -46,24 +71,24 @@ INSERT INTO `jobs_des` (`id`, `jobs_id`, `title`, `description`, `responsibiliti
 (3, 'DB789', 'Database Engineer', 'Power our data-driven systems by designing and maintaining secure, high-availability databases.', 'Design, implement, and optimize SQL and NoSQL database architecture.\r\nDevelop and maintain backup, recovery, and monitoring systems.\r\nCollaborate with developers to ensure efficient data models and queries.\r\nEnsure database scalability and security best practices.\r\nAnalyze performance bottlenecks and implement solutions.', 'Work with industry-leading cloud database tools (AWS, Azure, MongoDB).\r\nStructured mentorship and leadership tracks.\r\nRemote-friendly and performance-based bonuses.');
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `jobs_des`
+-- Indexes for table `eoi`
 --
-ALTER TABLE `jobs_des`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `eoi`
+  ADD PRIMARY KEY (`EOInumber`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `jobs_des`
+-- AUTO_INCREMENT for table `eoi`
 --
-ALTER TABLE `jobs_des`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+ALTER TABLE `eoi`
+  MODIFY `EOInumber` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

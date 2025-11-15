@@ -1,6 +1,6 @@
 <?php
-require_once("test_db.php"); // connect to database
-
+require_once("settings.php"); // connect to database
+$conn = mysqli_connect($host, $user, $pwd, $sql_db);
 $sql = "SELECT * FROM jobs_des";
 $result = $conn->query($sql);
 
