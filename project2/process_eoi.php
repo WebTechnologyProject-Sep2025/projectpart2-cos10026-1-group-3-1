@@ -58,7 +58,7 @@ if (empty($skills_arr))     $errors[] = "Select at least one skill.";
 
 // If validation errors -> show list
 if (!empty($errors)) {
-    echo "<h2>⚠ Submission Errors</h2><ul>";
+    echo "<h2>Submission Errors</h2><ul>";
     foreach ($errors as $e) {
         echo "<li>$e</li>";
     }
