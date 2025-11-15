@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 15, 2025 at 07:54 AM
+-- Generation Time: Nov 15, 2025 at 10:19 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -32,6 +32,8 @@ CREATE TABLE `eoi` (
   `job_ref` varchar(5) NOT NULL,
   `first_name` varchar(20) NOT NULL,
   `last_name` varchar(20) NOT NULL,
+  `dob` varchar(10) DEFAULT NULL,
+  `gender` enum('Male','Female','Other','Prefer not to say') DEFAULT 'Prefer not to say',
   `street` varchar(40) NOT NULL,
   `suburb` varchar(40) NOT NULL,
   `state` varchar(3) NOT NULL,
@@ -45,6 +47,16 @@ CREATE TABLE `eoi` (
   `other_skills` text DEFAULT NULL,
   `status` varchar(10) DEFAULT 'New'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `eoi`
+--
+
+INSERT INTO `eoi` (`EOInumber`, `job_ref`, `first_name`, `last_name`, `dob`, `gender`, `street`, `suburb`, `state`, `postcode`, `email`, `phone`, `skill1`, `skill2`, `skill3`, `skill4`, `other_skills`, `status`) VALUES
+(1, 'UI456', 'Test', 'User', '2000-01-01', 'Male', '123 Test St', 'Melbourne', 'VIC', '3000', 'test@example.com', '0412345678', 'HTML', '', '', '', 'None', 'New'),
+(3, 'UI456', 'Test', 'User', '01/01/2000', 'Male', '123 Test St', 'Melbourne', 'VIC', '3000', 'test@example.com', '0412345678', 'HTML', '', '', '', 'None', 'New'),
+(4, 'UI456', 'Test', 'User', '01/01/2000', 'Male', '123 Test St', 'Melbourne', 'VIC', '0300', 'test@example.com', '0412345678', 'HTML', '', '', '', 'None', 'New'),
+(5, 'UI456', 'Test', 'User', '01/01/2000', 'Male', '123 Test St', 'Melbourne', 'VIC', '0300', 'test@example.com', '0412345678', 'HTML', '', '', '', 'None', 'New');
 
 -- --------------------------------------------------------
 
@@ -88,7 +100,7 @@ ALTER TABLE `eoi`
 -- AUTO_INCREMENT for table `eoi`
 --
 ALTER TABLE `eoi`
-  MODIFY `EOInumber` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `EOInumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
