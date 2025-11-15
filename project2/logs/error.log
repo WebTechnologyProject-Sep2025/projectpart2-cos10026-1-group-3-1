@@ -113,3 +113,28 @@ Stack trace:
 [15-Nov-2025 07:51:36 Europe/Berlin] DB connection failed: Unknown database 'jobs'
 [15-Nov-2025 07:51:38 Europe/Berlin] DB connection failed: Unknown database 'jobs'
 [15-Nov-2025 07:51:38 Europe/Berlin] DB connection failed: Unknown database 'jobs'
+[15-Nov-2025 08:05:09 Europe/Berlin] DB connection failed: Access denied for user 'rosot'@'localhost' (using password: NO)
+[15-Nov-2025 08:11:26 Europe/Berlin] PHP Warning:  Undefined array key "job_id" in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\index.php on line 74
+[15-Nov-2025 08:11:26 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\index.php on line 74
+[15-Nov-2025 08:11:26 Europe/Berlin] PHP Warning:  Undefined array key "job_id" in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\index.php on line 74
+[15-Nov-2025 08:11:26 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\index.php on line 74
+[15-Nov-2025 08:11:26 Europe/Berlin] PHP Warning:  Undefined array key "job_id" in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\index.php on line 74
+[15-Nov-2025 08:11:26 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\index.php on line 74
+[15-Nov-2025 08:11:33 Europe/Berlin] PHP Warning:  Undefined array key "job_id" in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\index.php on line 74
+[15-Nov-2025 08:11:33 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\index.php on line 74
+[15-Nov-2025 08:11:33 Europe/Berlin] PHP Warning:  Undefined array key "job_id" in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\index.php on line 74
+[15-Nov-2025 08:11:33 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\index.php on line 74
+[15-Nov-2025 08:11:33 Europe/Berlin] PHP Warning:  Undefined array key "job_id" in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\index.php on line 74
+[15-Nov-2025 08:11:33 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\index.php on line 74
+[15-Nov-2025 08:12:22 Europe/Berlin] PHP Warning:  Undefined array key "job_id" in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\index.php on line 74
+[15-Nov-2025 08:12:22 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\index.php on line 74
+[15-Nov-2025 08:12:22 Europe/Berlin] PHP Warning:  Undefined array key "job_id" in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\index.php on line 74
+[15-Nov-2025 08:12:22 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\index.php on line 74
+[15-Nov-2025 08:12:22 Europe/Berlin] PHP Warning:  Undefined array key "job_id" in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\index.php on line 74
+[15-Nov-2025 08:12:22 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\index.php on line 74
+[15-Nov-2025 08:12:23 Europe/Berlin] PHP Warning:  Undefined array key "job_id" in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\index.php on line 74
+[15-Nov-2025 08:12:23 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\index.php on line 74
+[15-Nov-2025 08:12:23 Europe/Berlin] PHP Warning:  Undefined array key "job_id" in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\index.php on line 74
+[15-Nov-2025 08:12:23 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\index.php on line 74
+[15-Nov-2025 08:12:23 Europe/Berlin] PHP Warning:  Undefined array key "job_id" in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\index.php on line 74
+[15-Nov-2025 08:12:23 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in D:\xampp\htdocs\projectpart2-cos10026-1-group-3-1\project2\index.php on line 74
