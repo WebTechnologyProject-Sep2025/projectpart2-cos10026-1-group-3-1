@@ -1,184 +1,126 @@
 <?php
-// ------------------------
-// 1) Block direct access (user must come from form POST)
-// ------------------------
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: apply.php');
+// 1. Block direct access
+if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+    header("Location: apply.php");
     exit;
 }
 
+// 2. Connect to database
 require_once "settings.php";
-
-// ------------------------
-// 2) Connect to database
-// ------------------------
 $conn = @mysqli_connect($host, $user, $pwd, $sql_db);
+
 if (!$conn) {
-    die("<h2> Database connection failed.</h2>");
+    die("<h2>Database connection failed: " . mysqli_connect_error() . "</h2>");
 }
 
-// ------------------------
-// 3) Ensure the EOI table exists
-// ------------------------
-$create_sql = "
-CREATE TABLE IF NOT EXISTS eoi (
-  EOInumber    INT AUTO_INCREMENT PRIMARY KEY,
-  job_ref      VARCHAR(10)  NOT NULL,
-  first_name   VARCHAR(20)  NOT NULL,
-  last_name    VARCHAR(20)  NOT NULL,
-  street       VARCHAR(40)  NOT NULL,
-  suburb       VARCHAR(40)  NOT NULL,
-  state        ENUM('VIC','NSW','QLD','NT','WA','SA','TAS','ACT') NOT NULL,
-  postcode     CHAR(4)      NOT NULL,
-  email        VARCHAR(80)  NOT NULL,
-  phone        VARCHAR(20)  NOT NULL,
-  dob          DATE         NOT NULL,
-  gender       ENUM('Male','Female','Other','Prefer not to say') DEFAULT 'Prefer not to say',
-  skill1       VARCHAR(40),
-  skill2       VARCHAR(40),
-  skill3       VARCHAR(40),
-  skill4       VARCHAR(40),
-  other_skills TEXT,
-  status       ENUM('New','Current','Final') DEFAULT 'New',
-  created_at   TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-";
-mysqli_query($conn, $create_sql);
-
-// ------------------------
-// 4) Helper Functions
-// ------------------------
-
-//cleaning input to prevent broken pages/XSS
-function clean($value) {
-    if (!isset($value)) return "";
-    $value = trim($value);               // remove leading/trailing spaces
-    $value = stripslashes($value);       // remove backslashes
-    $value = htmlspecialchars($value);   // stop HTML/script execution
-    return $value;
+// 3. Clean function (simple)
+function clean($v) {
+    return trim(htmlspecialchars($v ?? ""));
 }
 
-// Convert DOB dd/mm/yyyy → YYYY-MM-DD and verify it is a real date
-function parse_dob($dob_str) {
-    if (!preg_match('/^(\\d{2})\\/(\\d{2})\\/(\\d{4})$/', $dob_str, $m))
-        return [false, "Date of Birth must be in format dd/mm/yyyy"];
+// 4. Collect POST data
+$job_ref      = clean($_POST["job_ref"] ?? "");
+$first_name   = clean($_POST["first_name"] ?? "");
+$last_name    = clean($_POST["last_name"] ?? "");
+$dob          = clean($_POST["dob"] ?? "");   
+$gender       = clean($_POST["gender"] ?? "Prefer not to say");
+$street       = clean($_POST["street"] ?? "");
+$suburb       = clean($_POST["suburb"] ?? "");
+$state        = clean($_POST["state"] ?? "");
+$postcode     = clean($_POST["postcode"] ?? "");
+$email        = clean($_POST["email"] ?? "");
+$phone        = clean($_POST["phone"] ?? "");
+$other_skills = clean($_POST["other_skills"] ?? "");
 
-    $day = (int)$m[1];
-    $month = (int)$m[2];
-    $year = (int)$m[3];
+$skills_arr   = $_POST["skills"] ?? [];
 
-    if (!checkdate($month, $day, $year))
-        return [false, "Invalid calendar date"];
+// Map skills[] → skill1..skill4
+$skill1 = isset($skills_arr[0]) ? clean($skills_arr[0]) : "";
+$skill2 = isset($skills_arr[1]) ? clean($skills_arr[1]) : "";
+$skill3 = isset($skills_arr[2]) ? clean($skills_arr[2]) : "";
+$skill4 = isset($skills_arr[3]) ? clean($skills_arr[3]) : "";
 
-    return [true, sprintf("%04d-%02d-%02d", $year, $month, $day)];
-}
-
-// Check postcode matches state (AU rule)
-function postcode_matches_state($state, $pc) {
-    $rules = [
-        'VIC' => ['3','8'], 'NSW' => ['1','2'], 'QLD' => ['4','9'],
-        'NT' => ['0'], 'ACT' => ['0'], 'SA' => ['5'],
-        'WA' => ['6'], 'TAS' => ['7']
-    ];
-    return isset($rules[$state]) && in_array($pc[0], $rules[$state]);
-}
-
-// ------------------------
-// 5) Collect + Sanitize Form Data
-// ------------------------
-$job_ref     = strtoupper(clean($_POST['job_ref'] ?? ""));
-$first_name  = clean($_POST['first_name'] ?? "");
-$last_name   = clean($_POST['last_name'] ?? "");
-$street      = clean($_POST['street'] ?? "");
-$suburb      = clean($_POST['suburb'] ?? "");
-$state       = clean($_POST['state'] ?? "");
-$postcode    = clean($_POST['postcode'] ?? "");
-$email       = clean($_POST['email'] ?? "");
-$phone       = clean($_POST['phone'] ?? "");
-$dob_raw     = clean($_POST['dob'] ?? "");
-$gender      = clean($_POST['gender'] ?? "Prefer not to say");
-$skills_arr  = $_POST['skills'] ?? [];
-$other_skills= clean($_POST['other_skills'] ?? "");
-
+// 5. Basic server-side validation
 $errors = [];
 
-// ------------------------
-// 6) Validation Rules 
-// ------------------------
-if ($job_ref === "" || !preg_match('/^[A-Z]{2,4}\\d{2,4}$/', $job_ref))
-    $errors[] = "Please select a valid job reference.";
+if ($job_ref === "")        $errors[] = "Job reference is required.";
+if ($first_name === "")     $errors[] = "First name is required.";
+if ($last_name === "")      $errors[] = "Last name is required.";
+if ($dob === "")            $errors[] = "Date of birth is required.";
+if ($gender === "")         $errors[] = "Gender is required.";
+if ($street === "")         $errors[] = "Street is required.";
+if ($suburb === "")         $errors[] = "Suburb is required.";
+if ($state === "")          $errors[] = "State is required.";
+if ($postcode === "")       $errors[] = "Postcode is required.";
+if ($email === "")          $errors[] = "Email is required.";
+if ($phone === "")          $errors[] = "Phone is required.";
+if (empty($skills_arr))     $errors[] = "Select at least one skill.";
 
-if (!preg_match('/^[A-Za-z]{1,20}$/', $first_name))
-    $errors[] = "First name must be letters only (max 20).";
-
-if (!preg_match('/^[A-Za-z]{1,20}$/', $last_name))
-    $errors[] = "Last name must be letters only (max 20).";
-
-if ($street === "" || strlen($street) > 40)
-    $errors[] = "Street must be ≤ 40 characters.";
-
-if ($suburb === "" || strlen($suburb) > 40)
-    $errors[] = "Suburb must be ≤ 40 characters.";
-
-if (!in_array($state, ['VIC','NSW','QLD','NT','WA','SA','TAS','ACT']))
-    $errors[] = "Invalid state selected.";
-
-if (!preg_match('/^\d{4}$/', $postcode))
-    $errors[] = "Postcode must be 4 digits.";
-elseif (!postcode_matches_state($state, $postcode))
-    $errors[] = "Postcode does not match selected state.";
-
-if (!filter_var($email, FILTER_VALIDATE_EMAIL))
-    $errors[] = "Invalid email.";
-
-if (!preg_match('/^[0-9\s]{8,12}$/', $phone))
-    $errors[] = "Phone must be 8–12 digits (spaces allowed).";
-
-list($dob_ok, $dob_iso_or_error) = parse_dob($dob_raw);
-if (!$dob_ok) $errors[] = $dob_iso_or_error;
-
-if (!in_array($gender, ['Male','Female','Other','Prefer not to say']))
-    $errors[] = "Invalid gender.";
-
-// Convert skills[] → skill1, skill2, skill3, skill4
-$skill_list = array_slice(array_map('clean', $skills_arr), 0, 4);
-while (count($skill_list) < 4) $skill_list[] = "";
-[$skill1,$skill2,$skill3,$skill4] = $skill_list;
-
-// ------------------------
-// 7) If validation fails → show errors
-// ------------------------
+// If validation errors -> show list
 if (!empty($errors)) {
     echo "<h2>⚠ Submission Errors</h2><ul>";
-    foreach ($errors as $e) echo "<li>$e</li>";
-    echo "</ul><p><a href=\"apply.php\">Go Back</a></p>";
+    foreach ($errors as $e) {
+        echo "<li>$e</li>";
+    }
+    echo "</ul><p><a href='apply.php'>Go Back</a></p>";
+    mysqli_close($conn);
     exit;
 }
 
-// ------------------------
-// 8) Insert Record
-// ------------------------
-$sql = "INSERT INTO eoi
-(job_ref, first_name, last_name, street, suburb, state, postcode, email, phone, dob, gender, skill1, skill2, skill3, skill4, other_skills, status)
-VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?, 'New')";
+// 6. Build and run INSERT
+$sql = "
+INSERT INTO eoi
+(job_ref, first_name, last_name, dob, gender, street, suburb, state, postcode,
+ email, phone, skill1, skill2, skill3, skill4, other_skills, status)
+VALUES (
+  '$job_ref',
+  '$first_name',
+  '$last_name',
+  '$dob',
+  '$gender',
+  '$street',
+  '$suburb',
+  '$state',
+  '$postcode',
+  '$email',
+  '$phone',
+  '$skill1',
+  '$skill2',
+  '$skill3',
+  '$skill4',
+  '$other_skills',
+  'New'
+)
+";
 
-$stmt = mysqli_prepare($conn, $sql);
-mysqli_stmt_bind_param($stmt, "ssssssssssssssss",
-  $job_ref, $first_name, $last_name, $street, $suburb, $state, $postcode,
-  $email, $phone, $dob_iso_or_error, $gender,
-  $skill1, $skill2, $skill3, $skill4,
-  $other_skills
-);
-mysqli_stmt_execute($stmt);
+$result = mysqli_query($conn, $sql);
 
-// ------------------------
-// 9) Show Confirmation Page
-// ------------------------
-$new_id = mysqli_insert_id($conn);
-echo "<h2> EOI Submitted Successfully</h2>";
-echo "<p>Your EOInumber is: <strong>$new_id</strong></p>";
-echo "<p>Status: New</p>";
-echo "<p><a href=\"index.php\">Return Home</a></p>";
+// 7. Output result
+if ($result) {
+    $new_id = mysqli_insert_id($conn);
+
+    include "header.inc";
+    echo "<main>";
+    echo "<h2>EOI Submitted!</h2>";
+    echo "<p>Your application was submitted successfully.</p>";
+    echo "<p><strong>EOInumber:</strong> " . htmlspecialchars($new_id) . "</p>";
+    echo "<p>Status: New</p>";
+    echo "<p><a href='apply.php'>Submit another application</a></p>";
+    echo "</main>";
+    include "footer.inc";
+
+} else {
+
+    include "header.inc";
+    echo "<main>";
+    echo "<h2>Error submitting EOI</h2>";
+    echo "<p>" . mysqli_error($conn) . "</p>";
+    echo "<a href='apply.php'>Go back</a>";
+    echo "</main>";
+    include "footer.inc";
+}
 
 mysqli_close($conn);
 ?>
+
+

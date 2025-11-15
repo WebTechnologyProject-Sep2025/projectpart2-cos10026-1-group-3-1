@@ -23,7 +23,7 @@
 
     <section>
       <h2 class="headings">Job Application Form</h2>
-      <form method="post" action="process_eoi.php" id="eoiForm">
+      <form method="post" action="process_eoi.php" novalidate=”novalidate”>
 
         <!-- Job reference: dropdown with all refs -->
         <label>Job Reference Number:</label>
